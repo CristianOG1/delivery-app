@@ -11,6 +11,7 @@ import 'cart_screen.dart';
 import 'menu_item_detail_screen.dart';
 import 'profile_screen.dart';
 import 'restaurant_detail_screen.dart';
+import 'courier_dashboard_screen.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -57,6 +58,16 @@ class HomeScreen extends ConsumerWidget {
                   ),
                 ),
             ],
+            
+          ),
+                    IconButton(
+            icon: const Icon(Icons.delivery_dining),
+            tooltip: 'Soy repartidor',
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const CourierDashboardScreen()),
+              );
+            },
           ),
           IconButton(
             icon: const Icon(Icons.person_outline),
