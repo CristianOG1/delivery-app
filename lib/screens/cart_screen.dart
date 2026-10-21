@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../providers/cart_provider.dart';
+import 'checkout_screen.dart';
 
 class CartScreen extends ConsumerWidget {
   const CartScreen({super.key});
@@ -71,14 +72,13 @@ class CartScreen extends ConsumerWidget {
                     ),
                     const Spacer(),
                     FilledButton(
-                      // El checkout real (crear la orden en Supabase) lo
-                      // construimos en un paso futuro.
+                      // Lleva al resumen y al pago seguro con Stripe.
                       onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Checkout: lo construimos en el siguiente paso')),
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => const CheckoutScreen()),
                         );
                       },
-                      child: const Text('Continuar'),
+                      child: const Text('Pagar'),
                     ),
                   ],
                 ),
