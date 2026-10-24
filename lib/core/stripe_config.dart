@@ -9,7 +9,7 @@ import 'package:flutter/foundation.dart';
 /// en los secretos de Supabase y la usan únicamente las Edge Functions.
 class StripeConfig {
   /// Reemplaza este valor con tu clave publicable de PRUEBA (modo test).
-  static const String publishableKey = 'pk_test_REEMPLAZA_CON_TU_CLAVE_PUBLICA';
+  static const String publishableKey = 'pk_test_51UTf07DxQ8xssE5TxFdGxnFNOjc2i3AKaUlrwbuM2eyuFRE2k9r9lVHAy7Q14epTFIFti3UPZGrbSWIyxY6djVJw00rWerhFux';
 
   static bool get estaConfigurado =>
       publishableKey.startsWith('pk_') && !publishableKey.contains('REEMPLAZA');
