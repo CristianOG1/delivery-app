@@ -12,6 +12,7 @@ import 'menu_item_detail_screen.dart';
 import 'profile_screen.dart';
 import 'restaurant_detail_screen.dart';
 import 'courier_dashboard_screen.dart';
+import 'my_orders_screen.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -78,6 +79,13 @@ class HomeScreen extends ConsumerWidget {
               );
             },
           ),
+             IconButton(
+     icon: const Icon(Icons.receipt_long_outlined),
+     tooltip: 'Mis pedidos',
+     onPressed: () => Navigator.of(context).push(
+       MaterialPageRoute(builder: (_) => const MyOrdersScreen()),
+     ),
+   ),
         ],
       ),
       body: RefreshIndicator(
