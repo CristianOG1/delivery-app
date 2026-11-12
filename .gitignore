@@ -51,3 +51,11 @@ app.*.map.json
 .cursor/
 .kiro/
 .codegraph/
+
+# Secretos locales: nunca subirlos
+.env
+.env.*
+!.env.example
+
+# Node: el proyecto es Flutter; esto es residuo del instalador de skills
+node_modules/

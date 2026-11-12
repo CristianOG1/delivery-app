@@ -37,7 +37,10 @@ begin
   insert into public.order_tracking (order_id, restaurant_name, restaurant_lat, restaurant_lng)
   select new.id, r.name, r.lat, r.lng
   from public.order_items oi
-  join public.menu_items mi on mi.id = oi.menu_item_id
+  -- El cast evita el error "operator does not exist: uuid = text" cuando
+  -- order_items.menu_item_id es text y menu_items.id es uuid. Con la columna
+  -- ya migrada a uuid (ver orders.sql) el join es uuid = uuid.
+  join public.menu_items mi on mi.id::text = oi.menu_item_id::text
   join public.restaurants r on r.id = mi.restaurant_id
   where oi.order_id = new.id
   limit 1
